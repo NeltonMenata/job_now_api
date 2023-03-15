@@ -2,7 +2,7 @@ const express = require("express");
 const routes = express.Router();
 
 const { GetCandidatos, PostCandidato, GetOneCandidato } = require("../modules/candidato/candidato_controller.js")
-const { CANDIDATO, ME } = require("./route_name.js");
+const { CANDIDATOS, CANDIDATO, ME } = require("./route_name.js");
 
 const multer = require("multer");
 const storage = multer.diskStorage({
@@ -22,7 +22,7 @@ const uploadFile = multer({ storage });
 const HOME = "/";
 const CARROCONTROLLER = "/carrocontroller"
 const home = require("../modules/home/home");
-const carroController = require("../modules/carro/carroController/carroController.js.js")
+const carroController = require("../modules/carro/carroController/carroController.js")
 routes.get(HOME, home);
 routes.get(CARROCONTROLLER, carroController.getCarros)
 routes.post(CARROCONTROLLER, carroController.criarCarro)
